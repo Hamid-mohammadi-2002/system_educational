@@ -1,0 +1,27 @@
+h3 {
+    display: flex;
+    justify-content: center;
+   margin-top: 1%
+}
+
+.row {
+    display: flex;
+    justify-content: center;
+    margin-top: 15%
+}
+
+.col-8 {
+    display: flex;
+    justify-content: center;
+}
+
+#submitBtn {
+    display: flex;
+    justify-content: center;
+    margin-top: 25px;
+}
+
+.alert {
+    display: flex;
+    justify-content: center;
+}

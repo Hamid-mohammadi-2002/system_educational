@@ -1,0 +1,32 @@
+{% extends 'university/base.html' %}
+{% load static %}
+
+{% block css %}
+<link href="{% static 'university/studentsLists.css' %}" rel="stylesheet"> {% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row centering">
+        <div class="col-8 centering">
+            <ol>
+                {% for student in students_list.students.all %}
+                <h2>
+                    <li>{{ student }}</li>
+                </h2>
+                <ol>
+                    {% for lesson in student.lesson.all %}
+                    <h4>
+                        <li>
+                            {{ lesson }}
+                        </li>
+                    </h4>
+                    {% endfor %}
+                </ol>
+                {% endfor %}
+            </ol>
+        </div>
+
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,52 @@
+{% extends 'university/base.html' %}
+{% load static %}
+
+{% block css %}
+<link href="{% static 'university/index.css' %}" rel="stylesheet">
+{% endblock %}
+<style>
+    body {
+        background-color: white;
+    }
+</style>
+{% block content %}
+
+<div class="container-fluid centering">
+
+
+
+    <div class="row centering">
+
+
+        <div class="col-12 centering">
+
+            <table class="table table-hover">
+
+                <thead>
+                <tr>
+                    <th scope="col">Class room name</th>
+                    <th scope="col">College name</th>
+                    <th scope="col">Class day</th>
+                    <th scope="col">professor name</th>
+                </tr>
+                </thead>
+
+                <tbody>
+
+                {% for each in Book %}
+
+                <tr>
+<!--                    <td><a class="classLinks" href="{% url 'university:students_list' each.id %}"> {{ each }} </a></td>-->
+                    <td>{{ each.name }}</td>
+<!--                    <td>{{each.class_day}}</td>-->
+<!--                    <td>{{each.professor_name}}</td>-->
+                </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+        </div>
+    </div>
+
+</div>
+{% endblock %}

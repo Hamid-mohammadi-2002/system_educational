@@ -1,0 +1,15 @@
+.centering {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
+
+.classLinks {
+    color: #ab8700;
+    text-decoration: none;
+}
+
+.classLinks:hover {
+    color: red;
+}

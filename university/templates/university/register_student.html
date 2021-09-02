@@ -1,0 +1,35 @@
+{% extends 'university/base.html' %}
+{% load static %}
+
+{% block css %}
+<link href="{% static 'university/registerStudents.css' %}" rel="stylesheet"> {% endblock %}
+
+{% block content %}
+
+<div class="container-fluid">
+    <div class="row centering ">
+        <div class="col-8 centering">
+            <form action="{% url 'university:registere_students' %}" method="POST">
+                {% csrf_token %}
+                {% for field in form %}
+
+                <div class="col-md-8 ">
+                    <p>
+                        {{ field.label }}
+                    </p> <br>
+                    {{ field }}
+                </div>
+
+                {% endfor %}
+
+                <div class="centering">
+                    <input class="btn btn-success" type="submit" value="Submit">
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

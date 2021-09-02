@@ -1,0 +1,41 @@
+{% extends 'accounts/base.html' %}
+
+{% load static %}
+
+{% block css %}
+<link href="{% static 'accounts/sign_in.css' %}" rel="stylesheet"> {% endblock %}
+{% block content %}
+
+
+<div class="container-fluid">
+    <h3>Login into your account </h3>
+
+    {% if messages %}
+    <div class="alert alert-danger" role="alert">
+        {% for message in messages %}
+        <h6> {{message}} </h6>
+        {% endfor %}
+    </div>
+
+    {% endif %}
+
+    <div class="row">
+
+        <div class="col-8">
+            <form action="{% url 'accounts:sign_in' %}" method="POST">
+                {% csrf_token %}
+                {% for input in form %}
+                <b>{{input.label}}</b><br>
+                {{ input }}<br>
+                {% endfor %}
+                <div id="submitBtn">
+                    <input class="btn btn-success" type="submit" value="Login">
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+
+</div>
+{% endblock %}

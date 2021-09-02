@@ -1,0 +1,11 @@
+body {
+    background-color: #ffffff;
+    color: #9f8610
+}
+
+.centering {
+
+    display: flex;
+    justify-content: center;
+    margin-top: 5%;
+}
